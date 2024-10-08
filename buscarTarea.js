@@ -14,7 +14,7 @@ export default function buscarTarea() {
   
       // Comparar cada letra de la búsqueda con el título
       for (let j = 0; j < busquedaLower.length; j++) {
-        if (tituloActual[j] !== busquedaLower[j]) {
+        if (tituloActual[j] != busquedaLower[j]) {
           match = false;
           break;
         }

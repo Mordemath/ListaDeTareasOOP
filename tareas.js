@@ -24,8 +24,8 @@ export default function Tarea(titulo, descripcion, vencimiento, dificultad) {
         this.descripcion = prompT("Ingrese la descripción de la tarea:");
         this.vencimiento = prompT("Ingrese la fecha de vencimiento de la tarea (Formato AAAA-MM-DD)");
         this.dificultad = parseInt(prompT('Ingrese la dificultad de la tarea (1: Fácil, 2: Medio, 3: Difícil):')) || 1;
-        this.tarea = new Tarea(titulo, descripcion, vencimiento, dificultad);
-        aTareas.push(this.tarea);
+        this.fechaCreacion = new Date();
+        this.fechaUltimaEdicion = this.fechaCreacion;
         console.log("Tarea agregada correctamente");
     }
 

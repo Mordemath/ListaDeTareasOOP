@@ -5,6 +5,7 @@ import * as Mostrar from './Mostrar.js';
 import  buscarTarea from './buscarTarea.js';
 let tareas = new Tarea(" "," "," "," ");
 let aTareas = [];
+let aux;
 export default aTareas;
 
 function mostrarMenuPrincipal() {
@@ -25,7 +26,9 @@ console.log(`Hola Olivia!!`);
         buscarTarea();
         break;
       case "3":
-        tareas.agregarTarea();
+        aux = new Tarea(" "," "," "," ");
+        aux.agregarTarea();
+        aTareas.push(aux);
         break;
       case "0":
         console.log("Saliendo del sistema...");
