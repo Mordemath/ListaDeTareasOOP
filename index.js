@@ -16,7 +16,7 @@ function mostrarMenuPrincipal() {
   do {
     console.log('Hola: ' + nombre);
     console.log("¿Qué deseas hacer?");
-    console.log("[1] Ver Mis tareas");a
+    console.log("[1] Ver Mis tareas");
     console.log("[2] Buscar mis tareas");
     console.log("[3] Agregar una tarea");
     console.log("[0] Salir...");
@@ -29,7 +29,7 @@ function mostrarMenuPrincipal() {
         buscarTarea();
         break;
       case "3":
-        agregarTarea();
+        tareas.agregarTarea();
         break;
       case "0":
         console.log("Saliendo del sistema...");
@@ -175,16 +175,6 @@ function mostrarTareasTerminadas() {
   } else {
     console.log("No hay tareas terminadas");
   }
-}
-
-function agregarTarea() {
-  let titulo = prompt("Ingrese el título de la tarea:");
-  let descripcion = prompt("Ingrese la descripción de la tarea:");
-  let vencimiento = prompt("Ingrese la fecha de vencimiento de la tarea (Formato AAAA-MM-DD)");
-  let dificultad = parseInt(prompt('Ingrese la dificultad de la tarea (1: Fácil, 2: Medio, 3: Difícil):')) || 1;
-  let tarea = new Tarea(titulo, descripcion, vencimiento, dificultad);
-  aTareas.push(tarea);
-  console.log("Tarea agregada correctamente");
 }
 
 function buscarTarea() {

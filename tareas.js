@@ -16,6 +16,18 @@ export function Tarea (titulo, descripcion, vencimiento, dificultad) {
       console.log(Vencimiento: ${this.vencimiento || 'Sin vencimiento'});
       console.log(Dificultad: ${this.dificultad === 1 ? '⭐' : this.dificultad === 2 ? '⭐⭐' : '⭐⭐⭐'});
     }
+this.agregarTarea = function () {
+    this.titulo = prompt("Ingrese el título de la tarea:");
+    this.descripcion = prompt("Ingrese la descripción de la tarea:");
+    this.vencimiento = prompt("Ingrese la fecha de vencimiento de la tarea (Formato AAAA-MM-DD)");
+    this.dificultad = parseInt(prompt('Ingrese la dificultad de la tarea (1: Fácil, 2: Medio, 3: Difícil):')) || 1;
+    this.tarea = new Tarea(titulo, descripcion, vencimiento, dificultad);
+    aTareas.push(tarea);
+    console.log("Tarea agregada correctamente");
+  }
 
+  this.GetEstado = function () {
+    return this.estado;
+  }
 
   };
