@@ -2,7 +2,7 @@ import prompt from 'prompt-sync';
 let prompT = prompt();
 import aTareas from './index.js';
 export default function buscarTarea() {
-    let busqueda = prompT("Ingrese el título o parte del mismo para buscar la tarea");
+    let busqueda = prompT("Ingrese el título o parte del mismo para buscar la tarea:  ");
     let resultados = [];
   
     // Búsqueda clásica letra por letra

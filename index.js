@@ -7,17 +7,22 @@ let tareas = new Tarea(" "," "," "," ");
 let aTareas = [];
 let aux;
 export default aTareas;
-
+function darNombre () {
+  console.log(`ingrese su nombre: `);
+  const nombre = prompT();
+  return nombre;
+}
 function mostrarMenuPrincipal() {
   let op;
-console.log(`Hola Olivia!!`);
+  let Nom = darNombre();
   do {
+        console.log(`Hola ${Nom}!!`);
     console.log("¿Qué deseas hacer?");
     console.log("[1] Ver Mis tareas");
     console.log("[2] Buscar mis tareas");
     console.log("[3] Agregar una tarea");
     console.log("[0] Salir...");
-    op = prompT("Ingrese el número de la opción:");
+    op = prompT("Ingrese el número de la opción:  ");
     switch (op) {
       case "1":
         mostrarMenuTareas();

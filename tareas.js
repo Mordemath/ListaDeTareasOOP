@@ -14,8 +14,8 @@ export default function Tarea(titulo, descripcion, vencimiento, dificultad) {
         console.log(`Título: ${this.titulo}`);
         console.log(`Descripción: ${this.descripcion || 'Sin descripción'}`);
         console.log(`Estado: ${this.estado}`);
-        console.log(`Fecha de Creación: ${this._fechaCreacion}`);
-        console.log(`Última Edición: ${this._fechaUltimaEdicion || 'No se ha editado'}`);
+        console.log(`Fecha de Creación: ${this.fechaCreacion}`);
+        console.log(`Última Edición: ${this.fechaUltimaEdicion || 'No se ha editado'}`);
         console.log(`Vencimiento: ${this.vencimiento || 'Sin vencimiento'}`);
         console.log(`Dificultad: ${this.dificultad === 1 ? '⭐' : this.dificultad === 2 ? '⭐⭐' : '⭐⭐⭐'}`);
     }
@@ -25,7 +25,7 @@ export default function Tarea(titulo, descripcion, vencimiento, dificultad) {
         this.vencimiento = prompT("Ingrese la fecha de vencimiento de la tarea (Formato AAAA-MM-DD)");
         this.dificultad = parseInt(prompT('Ingrese la dificultad de la tarea (1: Fácil, 2: Medio, 3: Difícil):')) || 1;
         this.fechaCreacion = new Date();
-        this.fechaUltimaEdicion = this.fechaCreacion;
+        this.fechaUltimaEdicion = null;
         console.log("Tarea agregada correctamente");
     }
 
