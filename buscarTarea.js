@@ -1,5 +1,8 @@
-export function buscarTarea() {
-    let busqueda = prompt("Ingrese el título o parte del mismo para buscar la tarea");
+import prompt from 'prompt-sync';
+let prompT = prompt();
+import aTareas from './index.js';
+export default function buscarTarea() {
+    let busqueda = prompT("Ingrese el título o parte del mismo para buscar la tarea");
     let resultados = [];
   
     // Búsqueda clásica letra por letra
@@ -28,7 +31,7 @@ export function buscarTarea() {
         console.log(`${i + 1}. ${resultados[i].titulo}`);
       }
       console.log("0 para volver al menú");
-      let opcion = prompt("Ingrese el número de la tarea que desea ver");
+      let opcion = prompT("Ingrese el número de la tarea que desea ver");
       if (opcion === "0") {
         console.log("Volviendo al menú principal");
       } else {

@@ -1,27 +1,22 @@
-var prompt = require('prompt-sync')();
-import {tareas} from './tareas.js';
+import prompt from 'prompt-sync';
+let prompT = prompt();
+import Tarea from './tareas.js';
 import * as Mostrar from './Mostrar.js';
-import { buscarTarea } from './buscarTarea.js';
-
+import  buscarTarea from './buscarTarea.js';
+let tareas = new Tarea(" "," "," "," ");
 let aTareas = [];
-
-function darNombre() {
-  const nombre = prompt("Ingrese su nombre");
-  return nombre;
-}
+export default aTareas;
 
 function mostrarMenuPrincipal() {
   let op;
-  const nombre = darNombre();
-
+console.log(`Hola Olivia!!`);
   do {
-    console.log('Hola: ' + nombre);
     console.log("¿Qué deseas hacer?");
     console.log("[1] Ver Mis tareas");
     console.log("[2] Buscar mis tareas");
     console.log("[3] Agregar una tarea");
     console.log("[0] Salir...");
-    op = prompt("Ingrese el número de la opción: \n");
+    op = prompT("Ingrese el número de la opción:");
     switch (op) {
       case "1":
         mostrarMenuTareas();
@@ -49,7 +44,7 @@ function mostrarMenuTareas() {
   console.log("[3] Tareas en curso");
   console.log("[4] Tareas terminadas");
   console.log("[5] Volviendo al menú principal");
-  let opcion = prompt("Ingrese el número de la opción");
+  let opcion = prompT("Ingrese el número de la opción");
   switch (opcion) {
     case "1":
       Mostrar.mostrarTodasTareas();

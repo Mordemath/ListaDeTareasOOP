@@ -1,4 +1,7 @@
-export function Tarea(titulo, descripcion, vencimiento, dificultad) {
+import prompt from 'prompt-sync';
+let prompT = prompt();
+import aTareas from './index.js';
+export default function Tarea(titulo, descripcion, vencimiento, dificultad) {
     this.titulo = titulo;
     this.descripcion = descripcion;
     this.vencimiento = vencimiento;
@@ -17,12 +20,12 @@ export function Tarea(titulo, descripcion, vencimiento, dificultad) {
         console.log(`Dificultad: ${this.dificultad === 1 ? '⭐' : this.dificultad === 2 ? '⭐⭐' : '⭐⭐⭐'}`);
     }
     this.agregarTarea = function () {
-        this.titulo = prompt("Ingrese el título de la tarea:");
-        this.descripcion = prompt("Ingrese la descripción de la tarea:");
-        this.vencimiento = prompt("Ingrese la fecha de vencimiento de la tarea (Formato AAAA-MM-DD)");
-        this.dificultad = parseInt(prompt('Ingrese la dificultad de la tarea (1: Fácil, 2: Medio, 3: Difícil):')) || 1;
+        this.titulo = prompT("Ingrese el título de la tarea:");
+        this.descripcion = prompT("Ingrese la descripción de la tarea:");
+        this.vencimiento = prompT("Ingrese la fecha de vencimiento de la tarea (Formato AAAA-MM-DD)");
+        this.dificultad = parseInt(prompT('Ingrese la dificultad de la tarea (1: Fácil, 2: Medio, 3: Difícil):')) || 1;
         this.tarea = new Tarea(titulo, descripcion, vencimiento, dificultad);
-        aTareas.push(tarea);
+        aTareas.push(this.tarea);
         console.log("Tarea agregada correctamente");
     }
 
@@ -41,4 +44,29 @@ export function Tarea(titulo, descripcion, vencimiento, dificultad) {
     this.GetDificultad = function () {
         return this.dificultad;
     }
+    this.GetFechaCreacion = function () {
+        return this.fechaCreacion;
+    }
+    this.GetfechaUltimaEdicion = function () {
+        return this.fechaUltimaEdicion;
+    }
+    this.SetEstado = function (nuevoEstado) {
+        this.estado = nuevoEstado;
+    }
+    this.SetTitulo = function (nuevo) {
+        this.titulo = nuevo;
+    }
+    this.SetDescripcion = function (nuevo) {
+        this.descripcion = nuevo;
+    }
+    this.SetVencimiento = function (nuevo) {
+        this.vencimiento = nuevo;
+    }
+    this.SetDificultad = function (nuevo) {
+        this.dificultad = nuevo;
+    }
+    this.SetFechaUltimaEdicion = function (nuevo) {
+        this.fechaUltimaEdicion = nuevo;
+    }
+
 };
