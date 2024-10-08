@@ -8,14 +8,14 @@ export function Tarea (titulo, descripcion, vencimiento, dificultad) {
     this.fechaUltimaEdicion = null;
 
       this.mostrarDetalles = function () {
-      console.log(Título: ${this.titulo});
-      console.log(Descripción: ${this.descripcion || 'Sin descripción'});
-      console.log(Estado: ${this.estado});
-      console.log(Fecha de Creación: ${this._fechaCreacion});
-      console.log(Última Edición: ${this._fechaUltimaEdicion || 'No se ha editado'});
-      console.log(Vencimiento: ${this.vencimiento || 'Sin vencimiento'});
-      console.log(Dificultad: ${this.dificultad === 1 ? '⭐' : this.dificultad === 2 ? '⭐⭐' : '⭐⭐⭐'});
-    }
+        console.log(`Título: ${this.titulo}`);
+        console.log(`Descripción: ${this.descripcion || 'Sin descripción'}`);
+        console.log(`Estado: ${this.estado}`);
+        console.log(`Fecha de Creación: ${this._fechaCreacion}`);
+        console.log(`Última Edición: ${this._fechaUltimaEdicion || 'No se ha editado'}`);
+        console.log(`Vencimiento: ${this.vencimiento || 'Sin vencimiento'}`);
+        console.log(`Dificultad: ${this.dificultad === 1 ? '⭐' : this.dificultad === 2 ? '⭐⭐' : '⭐⭐⭐'}`);
+      }
 
 
   };
