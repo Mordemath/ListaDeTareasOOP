@@ -16,7 +16,7 @@ function mostrarMenuPrincipal() {
   do {
     console.log('Hola: ' + nombre);
     console.log("¿Qué deseas hacer?");
-    console.log("[1] Ver Mis tareas");a
+    console.log("[1] Ver Mis tareas");
     console.log("[2] Buscar mis tareas");
     console.log("[3] Agregar una tarea");
     console.log("[0] Salir...");
